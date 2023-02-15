@@ -1,0 +1,37 @@
+﻿@model IEnumerable<SomeTestClass>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Data1</th>
+          <th scope="col">Data2</th>
+          <th scope="col">Data3</th>
+          <th scope="col">Data4</th>
+          <th scope="col">OtherType.ID</th>
+          <th scope="col">OtherType.Title</th>
+        </tr>
+      </thead>
+      <tbody>
+          @foreach(var item in Model)
+          {
+              <tr>
+                <th scope="row">@item.ID</th>
+                <td>@item.Title</td>
+                <td>@item.Data1</td>
+                <td>@item.Data2</td>
+                <td>@item.Data3</td>
+                <td>@item.Data4</td>
+                <td>@item.OtherTypeValue.ID</td>
+                <td>@item.OtherTypeValue.Title</td>
+              </tr>
+          }
+      </tbody>
+    </table>
+</div>

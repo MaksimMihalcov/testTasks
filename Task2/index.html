@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Task2</title>
+</head>
+<body>
+    <div class="m-5">
+        <form id="myForm">
+            <div class="form-group mb-4">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group mb-4">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="d-flex justify-content-center align-items-center">
+            <label class="display-1 mt-5 d-none" id="resLabel">Data is not correct!</label>
+        </div>  
+    </div>
+    <script>
+        let form = document.getElementById('myForm');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let res = document.getElementById('resLabel');
+
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            res.classList.remove('d-none');
+            res.classList.remove('text-success');
+            res.classList.remove('text-danger');
+            if (email.value == 'test@test.com' && password.value == 'test') {
+                res.innerHTML = 'Success!';
+                res.classList.add('text-success');
+            } else {
+                res.innerHTML = 'Error!';
+                res.classList.add('text-danger');
+            }
+        })
+
+    </script>
+</body>
+</html>
